@@ -18,6 +18,13 @@ EXAMPLE:#docker tag neeraj:001 neeraj1095/neeraj:48
 2- push docker image to docker hub 
 COMMAND: #docker push image_name_with_dockerhub_repository:tag
 EXAMPLE:#docker push neeraj1095/neeraj:001
+
+
+P:
+docker run –name newnginx -p 7089:80 -d hb7736/mynginx:latest
+docker tag mynginx:latest hb7736/mynginx:latest
+$ docker login
+docker push hb7736/mynginx:latest
 -------------------------------------------
 COMMAND: #docker rmi –f image_id
 EXAMPLE:#docker rmi –f 49a9b1cbe9fd
