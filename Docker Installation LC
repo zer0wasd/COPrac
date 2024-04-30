@@ -24,7 +24,7 @@ Install Docker Engine
 ----------------
 Check Status of Docker
 systemctl status docker
-
+docker run --name mynginx -p 7089:80 -d nginx
 docker top <CID>
 docker stop CID
 docker start CID
