@@ -1,0 +1,20 @@
+install docker
+
+docker pull postgres:latest
+
+run postgress container: docker run --name pg1 -e POSTGRES_PASSWORD=12345687 -d postgress:latest
+
+docker ps to verify
+
+get postgress container shell :
+    docker exec -it pg1 /bin/bash
+
+perform health check in postgres container shell:
+    pg_isready -U root
+
+    pg_isready -U postgress
+
+    exit
+
+automate:
+    run new postgres container: docker run --name -pg2 -e POSTGRES_PASSWORD=12425687 --health-cmd="pg_isready -U root || exit 1" -d postgres:latest
