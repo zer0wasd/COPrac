@@ -1,12 +1,10 @@
 install docker 
 ------------------------
 vi Dockerfile
-#this is sample image
-FROM ubuntu
-MAINTAINER @gmail.com
-RUN apt update -y
-RUN apt install nginx -y
-CMD ["echo","image is created by neeraj"]
+FROM nginx:latest
+COPY index.html /usr/share/nginx/html/index.html
+EXPOSE 80
+CMD [“nginx”,”-g”,”daemon off;”]
 ----------------------------------------
 COMMAND : #docker build –t image_name:tag /path of docker file
 EXAMPLE:#docker build –t neeraj:001 .
